@@ -3,11 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Project } from '../types/supabase';
 
-interface ProjectsProps {
-  projects: Project[];
-}
-
-export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+export const Projects= ({ projects }) => {
   return (
     <section className="py-20 bg-gray-50 dark:bg-secondary-light">
       <div className="container mx-auto px-4">
@@ -25,7 +21,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   );
 };
 
-const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
+const ProjectCard = ({ project, index }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,

@@ -3,13 +3,8 @@ import { supabase } from '../../lib/supabase';
 import { Service, Project, Testimonial } from '../../types/supabase';
 import { toast } from 'react-hot-toast';
 
-interface AdminItemEditorProps {
-  item: Service | Project | Testimonial;
-  type: 'services' | 'projects' | 'testimonials';
-  onUpdate: () => void;
-}
 
-export const AdminItemEditor: React.FC<AdminItemEditorProps> = ({
+export const AdminItemEditor = ({
   item,
   type,
   onUpdate,

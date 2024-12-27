@@ -3,11 +3,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Service } from '../../types/supabase';
 
-interface ServicesProps {
-  services: Service[];
-}
 
-export const Services: React.FC<ServicesProps> = ({ services }) => {
+export const Services= ({ services }) => {
   return (
     <section className="py-20 bg-white dark:bg-secondary">
       <div className="container mx-auto px-4">
@@ -25,7 +22,7 @@ export const Services: React.FC<ServicesProps> = ({ services }) => {
   );
 };
 
-const ServiceCard: React.FC<{ service: Service; index: number }> = ({ service, index }) => {
+const ServiceCard = ({ service, index }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,

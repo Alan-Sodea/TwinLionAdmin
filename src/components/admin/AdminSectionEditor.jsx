@@ -4,16 +4,11 @@ import { Service, Project, Testimonial } from '../../types/supabase';
 import { toast } from 'react-hot-toast';
 import { AdminItemEditor } from './AdminItemEditor';
 
-interface AdminSectionEditorProps {
-  sectionId: string;
-  onUpdate: () => void;
-}
-
-export const AdminSectionEditor: React.FC<AdminSectionEditorProps> = ({
+export const AdminSectionEditor = ({
   sectionId,
   onUpdate,
 }) => {
-  const [items, setItems] = useState<(Service | Project | Testimonial)[]>([]);
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [section, setSection] = useState<any>(null);
 
@@ -49,7 +44,7 @@ export const AdminSectionEditor: React.FC<AdminSectionEditorProps> = ({
     }
   };
 
-  const handleUpdateOrder = async (newOrder: (Service | Project | Testimonial)[]) => {
+  const handleUpdateOrder = async (newOrder) => {
     try {
       const updates = newOrder.map((item, index) => ({
         id: item.id,

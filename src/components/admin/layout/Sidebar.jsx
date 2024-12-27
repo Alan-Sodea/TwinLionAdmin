@@ -38,7 +38,7 @@ export const Sidebar = () => {
     )
   }
 
-  const modifySidebarItem1 = async (section: string, title: string) => {
+  const modifySidebarItem1 = async (section, title) => {
 
     const elementIndex = store.findIndex(el => el.section.get() === section);
     // console.log('qsd');
@@ -53,7 +53,7 @@ export const Sidebar = () => {
   }
 
 
-  const deleteSidebarItem1 = (section: string) => {
+  const deleteSidebarItem1 = (section) => {
     const elementIndex = store.findIndex(el => el.section.get() === section);
 
     if (elementIndex === -1) {
@@ -66,7 +66,7 @@ export const Sidebar = () => {
     saveGlobalStore();
   }
 
-  const goUpSidebarItem = (section: string) => {
+  const goUpSidebarItem = (section) => {
     // Trouver l'index de l'élément avec la section donnée
     const elementIndex = store.findIndex(el => el.section.get() === section);
 
@@ -86,7 +86,7 @@ export const Sidebar = () => {
 
   }
 
-  const goDownSidebarItem = (section: string) => {
+  const goDownSidebarItem = (section) => {
     const elementIndex = store.findIndex(el => el.section.get() === section);
 
     if (elementIndex === -1) {

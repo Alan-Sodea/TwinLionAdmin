@@ -17,7 +17,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({ image, onClose }) =>
         >
           <X className="w-6 h-6" />
         </button>
-        
+
         <div className="p-6">
           <img
             src={image.url}

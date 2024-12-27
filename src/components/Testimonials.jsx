@@ -3,11 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Testimonial } from '../types/supabase';
 
-interface TestimonialsProps {
-  testimonials: Testimonial[];
-}
-
-export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
+export const Testimonials = ({ testimonials }) => {
   return (
     <section className="py-20 bg-white dark:bg-secondary">
       <div className="container mx-auto px-4">
@@ -25,7 +21,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
   );
 };
 
-const TestimonialCard: React.FC<{ testimonial: Testimonial; index: number }> = ({ testimonial, index }) => {
+const TestimonialCard = ({ testimonial, index }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
