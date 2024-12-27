@@ -3,11 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Service } from '../types/supabase';
 
-interface HeroProps {
-  services: Service[];
-}
-
-export const Hero: React.FC<HeroProps> = ({ services }) => {
+export const Hero = ({ services }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,

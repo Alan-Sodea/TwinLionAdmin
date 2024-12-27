@@ -3,9 +3,9 @@ import { supabase } from '../lib/supabase';
 import { Service, Project, Testimonial } from '../types/supabase';
 
 export const useHomeData = () => {
-  const [services, setServices] = useState<Service[]>([]);
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [services, setServices] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
