@@ -63,7 +63,7 @@ export const RecordList = () => {
     saveGlobalStore();
   }
 
-  const uploadImage = async (file: File): Promise<string> => {
+  const uploadImage = async (file) => {
     try {
 
       // Générer un nom unique pour l'image
@@ -93,7 +93,7 @@ export const RecordList = () => {
     }
   };
 
-  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, recordId: string) => {
+  const handleImageUpload = async (e, recordId) => {
     const file = e.target.files?.[0];
     if (!file) return;
 

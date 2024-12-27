@@ -7,7 +7,7 @@ export const ImageSelector = () => {
   const store = useHookstate(globalStore);
   const current = useHookstate(actualSection);
 
-  const selectImage = (index: number) => {
+  const selectImage = (index) => {
     const elementIndex = store.findIndex(el => el.section.get() === current.get());
 
     const elt = store[elementIndex];
