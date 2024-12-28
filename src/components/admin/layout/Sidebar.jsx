@@ -82,6 +82,35 @@ export const Sidebar = () => {
     const tempSection = store[swapIndex].section.get();
     store[swapIndex].section.set(store[elementIndex].section.get());
     store[elementIndex].section.set(tempSection);
+
+    const templayout = store[swapIndex].layout.get();
+    store[swapIndex].layout.set(store[elementIndex].layout.get());
+    store[elementIndex].layout.set(templayout);
+
+    const temprecords = [];
+    let title = "";
+    let text = "";
+    let image = "";
+
+    for (let i = 0; i < store[swapIndex].records.get().length; i++) {
+      title = store[swapIndex].records[i].title.get()
+      text = store[swapIndex].records[i].text.get()
+      image = store[swapIndex].records[i].image.get()
+      temprecords.push({title, text, image});
+    }
+
+
+    const move1 = [];
+    for (let i = 0; i < store[elementIndex].records.get().length; i++) {
+      title = store[elementIndex].records[i].title.get()
+      text = store[elementIndex].records[i].text.get()
+      image = store[elementIndex].records[i].image.get()
+      move1.push({title, text, image});
+    }
+    store[swapIndex].records.set(move1);
+    
+    store[elementIndex].records.set(temprecords);
+    
     saveGlobalStore();
 
   }
@@ -101,6 +130,35 @@ export const Sidebar = () => {
     const tempSection = store[swapIndex].section.get();
     store[swapIndex].section.set(store[elementIndex].section.get());
     store[elementIndex].section.set(tempSection);
+
+    const templayout = store[swapIndex].layout.get();
+    store[swapIndex].layout.set(store[elementIndex].layout.get());
+    store[elementIndex].layout.set(templayout);
+
+    const temprecords = [];
+    let title = "";
+    let text = "";
+    let image = "";
+
+    for (let i = 0; i < store[swapIndex].records.get().length; i++) {
+      title = store[swapIndex].records[i].title.get()
+      text = store[swapIndex].records[i].text.get()
+      image = store[swapIndex].records[i].image.get()
+      temprecords.push({title, text, image});
+    }
+
+
+    const move1 = [];
+    for (let i = 0; i < store[elementIndex].records.get().length; i++) {
+      title = store[elementIndex].records[i].title.get()
+      text = store[elementIndex].records[i].text.get()
+      image = store[elementIndex].records[i].image.get()
+      move1.push({title, text, image});
+    }
+    store[swapIndex].records.set(move1);
+    
+    store[elementIndex].records.set(temprecords);
+
     saveGlobalStore();
 
   }
