@@ -19,7 +19,7 @@ export const ImageList = () => {
     const records = store[elementIndex];
 
     if (recordIndex < 0 || recordIndex >= records.length) {
-      console.log({ error: `Record index "${recordIndex}" is out of bounds.` });
+      toast({ error: `Record index "${recordIndex}" is out of bounds.` });
       return;
     }
 
@@ -37,7 +37,6 @@ export const ImageList = () => {
       image: "",
       desc: "",
     });
-    console.log(store.get())
     saveGallery();
   }
 
@@ -87,10 +86,6 @@ export const ImageList = () => {
 
   };
 
-  useEffect(() => {
-
-    console.log({ elt: store[store.findIndex(el => el.section.get() === current.get())].records })
-  })
 
   return (
     <div className="bg-secondary-light rounded-lg shadow">
