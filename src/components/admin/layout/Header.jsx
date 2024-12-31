@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { saveGallery, saveGlobalStore } from '../../../stores/actionsStore';
-=======
-import { saveGlobalStore } from '../../../stores/actionsStore';
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
+import { Default, saveGallery, saveGlobalStore } from '../../../stores/actionsStore';
 import toast from 'react-hot-toast';
 
 export const Header = () => {
@@ -14,26 +10,43 @@ export const Header = () => {
           Administration
         </h1>
 
-        <button
-          className="p-2 px-4 font-bold hover:shadow-white shadow-sm rounded-md bg-green-500 text-black"
-          aria-label="Toggle theme"
-          onClick={async () => {
+        <div className='flex gap-2'>
+          <button
+            className="p-2 px-4 font-bold hover:shadow-white shadow-sm rounded-md bg-yellow-500 text-black"
+            aria-label="Toggle theme"
+            onClick={async () => {
 
-            try {
-              await saveGlobalStore();
-<<<<<<< HEAD
-              await saveGallery();
-=======
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
-              toast.success("Données sauvegardées.");
-            } catch (error) {
-              toast.error("Erreur lors de la sauvegarde des données.")
-            }
+              try {
+                await Default();
+                toast.success("Données réinitialisées.");
+              } catch (error) {
+                toast.error("Erreur lors de la sauvegarde des données.")
+              }
 
-          }}
-        >
-          Sauvegarder
-        </button>
+            }}
+          >
+            Réinitialiser
+          </button>
+
+          <button
+            className="p-2 px-4 font-bold hover:shadow-white shadow-sm rounded-md bg-green-500 text-black"
+            aria-label="Toggle theme"
+            onClick={async () => {
+
+              try {
+                await saveGlobalStore();
+                await saveGallery();
+                toast.success("Données sauvegardées.");
+              } catch (error) {
+                toast.error("Erreur lors de la sauvegarde des données.")
+              }
+
+            }}
+          >
+            Sauvegarder
+          </button>
+
+        </div>
       </div>
     </header>
   );

@@ -1,10 +1,5 @@
 import { supabase } from "../lib/supabase";
-<<<<<<< HEAD
 import { globalStore, imagestore } from "./adminStore"
-=======
-import { globalStore } from "./adminStore"
-import { useHookstate } from "@hookstate/core";
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
 
 
 export const saveGlobalStore = async (filename = 'global-store.json') => {
@@ -27,7 +22,6 @@ export const saveGlobalStore = async (filename = 'global-store.json') => {
     return true;
 };
 
-<<<<<<< HEAD
 export const saveGallery = async (filename = 'gallery.json') => {
 
     const jsonString = JSON.stringify(JSON.parse(JSON.stringify(imagestore.value))) // Récupérer le state actuel
@@ -48,17 +42,11 @@ export const saveGallery = async (filename = 'gallery.json') => {
     return true;
 };
 
-=======
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
 
 export const loadGlobalStore = async (filename = 'global-store.json') => {
 
     try {
-<<<<<<< HEAD
         console.log('Début du chargement du state...');
-=======
-        console.log('Début de la sauvegarde du state...');
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
         // Charger le dernier state sauvegardé (par exemple, le plus récent)
         // Télécharger le fichier JSON depuis le bucket 'state'
         const { data: file, error } = await supabase.storage
@@ -79,19 +67,11 @@ export const loadGlobalStore = async (filename = 'global-store.json') => {
 
             // Mettre à jour le globalStore avec les données téléchargées
             globalStore.set(loadedStore);
-<<<<<<< HEAD
     
             console.log('GlobalStore chargé avec succès :', loadedStore);
             return true;
         } else {
                 console.error('Le fichier téléchargé n\'est pas un Blob');
-=======
-
-            console.log('GlobalStore chargé avec succès :', loadedStore);
-            return true;
-        } else {
-            console.error('Le fichier téléchargé n\'est pas un Blob');
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
             return false;
         }
 
@@ -101,7 +81,6 @@ export const loadGlobalStore = async (filename = 'global-store.json') => {
     }
 };
 
-<<<<<<< HEAD
 
 export const loadGallery = async (filename = 'gallery.json') => { 
 
@@ -232,5 +211,3 @@ export const Default = () => {
     globalStore.set(e);
     imagestore.set([]);
 }
-=======
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f

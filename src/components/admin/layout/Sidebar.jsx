@@ -175,14 +175,11 @@ export const Sidebar = () => {
         </button>
       </div>
 
-<<<<<<< HEAD
       <div onClick={() => { current.set("gallery"); }} className={"flex justify-between items-center p-3 my-1 rounded-lg cursor-pointer transition-colors hover:bg-primary/10 " + String(("gallery" == current.get()) ? "bg-primary/20" : "bg-secondary")}>
         <span className="text-gray-200">
           Gallery
         </span> 
       </div>
-=======
->>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
       {store.map((item, index) => (
         <div onClick={() => { current.set(item.section.get()); }} key={index} className={"flex justify-between items-center p-3 my-1 rounded-lg cursor-pointer transition-colors hover:bg-primary/10 " + String((item.section.get() == current.get()) ? "bg-primary/20" : "bg-secondary")}>
 
