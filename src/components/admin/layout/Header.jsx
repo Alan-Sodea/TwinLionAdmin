@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { saveGallery, saveGlobalStore } from '../../../stores/actionsStore';
+=======
+import { saveGlobalStore } from '../../../stores/actionsStore';
+>>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
 import toast from 'react-hot-toast';
 
 export const Header = () => {
@@ -17,7 +21,10 @@ export const Header = () => {
 
             try {
               await saveGlobalStore();
+<<<<<<< HEAD
               await saveGallery();
+=======
+>>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
               toast.success("Données sauvegardées.");
             } catch (error) {
               toast.error("Erreur lors de la sauvegarde des données.")

@@ -3,10 +3,16 @@ import { Header } from '../components/admin/layout/Header';
 import { Sidebar } from '../components/admin/layout/Sidebar';
 import { ImageSelector } from '../components/admin/content/ImageSelector';
 import { RecordList } from '../components/admin/content/RecordList';
+<<<<<<< HEAD
 import { ImageList } from '../components/admin/content/ImageList';
 import { useHookstate } from '@hookstate/core';
 import { actualSection, globalStore, isConnected } from '../stores/adminStore';
 import { loadGallery, loadGlobalStore } from '../stores/actionsStore';
+=======
+import { useHookstate } from '@hookstate/core';
+import { actualSection, globalStore, isConnected } from '../stores/adminStore';
+import { loadGlobalStore } from '../stores/actionsStore';
+>>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
 import { useNavigate } from 'react-router-dom';
 
 export const AdminDashboard = () => {
@@ -21,7 +27,10 @@ export const AdminDashboard = () => {
     if (!connected.get()) navigate("/login")
 
     loadGlobalStore();
+<<<<<<< HEAD
     loadGallery();
+=======
+>>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
   }, [])
 
   return (
@@ -36,6 +45,7 @@ export const AdminDashboard = () => {
               {
                 ((current.get() != "") && (store.length > 0))
                   ? <>
+<<<<<<< HEAD
                     {
                       ((current.get() != "gallery") ?
                       <>
@@ -50,6 +60,10 @@ export const AdminDashboard = () => {
                       )
                       
                     }
+=======
+                    < ImageSelector />
+                    <RecordList />
+>>>>>>> c143956da62df84ebaf8b2c3f86b0f83528dba1f
                   </>
                   : <></>
               }
